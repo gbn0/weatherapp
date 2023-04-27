@@ -1,5 +1,5 @@
 export function loadChart(hourly) {
-  hourly.forEach((hour) => {
+  hourly.slice(0, 24).forEach((hour) => {
     let date = new Date(hour.timeStamp);
     let fDate = date.toLocaleTimeString().slice(0, 2);
     let temp = hour.temp;
