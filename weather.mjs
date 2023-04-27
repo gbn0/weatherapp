@@ -1,10 +1,9 @@
-const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=-30.06&longitude=-51.17&hourly=temperature_2m,apparent_temperature,precipitation_probability,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum&current_weather=true&timeformat=unixtime&forecast_days=8&timezone=America%2FSao_Paulo`;
+const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=-30.06&longitude=-51.17&hourly=temperature_2m,apparent_temperature,precipitation_probability,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum&current_weather=true&timeformat=unixtime&forecast_days=7&timezone=America%2FSao_Paulo`;
 
 export function getWeather() {
   return fetch(apiUrl)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       return {
         current: parseCurrentWeather(data),
         daily: parseDailyWeather(data),
@@ -48,14 +47,12 @@ function parseDailyWeather({ daily }) {
 }
 
 function parseHourlyWeather({ hourly, current_weather }) {
-  return hourly.time
-    .map((time, index) => {
-      return {
-        timeStamp: time * 1000,
-        temp: Math.round(hourly.temperature_2m[index]),
-        appTemp: Math.round(hourly.apparent_temperature[index]),
-        iconCode: hourly.weathercode[index],
-      };
-    })
-    .filter(({ timeStamp }) => timeStamp >= current_weather.time * 1000);
+  return hourly.time.map((time, index) => {
+    return {
+      timeStamp: time * 1000,
+      temp: Math.round(hourly.temperature_2m[index]),
+      appTemp: Math.round(hourly.apparent_temperature[index]),
+      iconCode: hourly.weathercode[index],
+    };
+  });
 }
