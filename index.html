@@ -1,25 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
-    <div style="height: 300px">
-        <canvas id="myChart" width="1200px" height="480" style="background-color: transparent;" position="absolute"
-            left:="4560" ; top="965" ;;></canvas>
-    </div>
-    
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        @font-face {
+        font-family: 'Mont';
+        src: url('/teste menu/Mont-Regular.otf') format('opentype');
+        }
+
+        @font-face {
+        font-family: 'Mont';
+        src: url('/teste menu/Mont-Bold.otf') format('opentype');
+        font-weight: bold;
+        }
+        body{
+            background-color: #2D9EE0;
+            color: white;
+            display:flex;
+            justify-content: center;
+        }
+        
+        .info{
+            font-size: 100px;
+            font-family: 'Mont';
+        }
+        #boxes{
+            display: flex;
+
+        }
+        .box-content{
+            height: 129px;
+            width: 120px;
+            background-color: rgba(255, 255, 255, 0.13);
+            margin: 5px;
+            border-radius: 20px;
+            padding: 0px;
+            font-size: 20px;
+            font-family: 'Mont';
+            justify-content: center;
+            display: block;
+            cursor: pointer;
+
+        }
+        .box-content:hover{
+            transform: scale(1.08);
+            box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.041);
+            transition: 0.4s;
+        }
+        .box-content div{
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        #week-day{
+            padding-top: 10px;
+            font-size: 25px;
+        }
+        #icon-day{
+            height: 40px;
+            margin: 13px;
+        }
+        .max-min{
+            font-size: 15px;
+        }
+        .min-day {
+            margin-left: 50px;
+            color: rgb(209, 208, 208);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div style="height: 300px">
+            <canvas id="myChart" width="1200px" height="480" style="background-color: transparent;" position="absolute"
+                left:="4560" ; top="965" ;;></canvas>
+        </div>
+    </section>
+    <section>
+        <div class="info" id="info">
+            <h1 id="maintemp">23º</h1>
+        </div>
+        <template id="box-template">
+            <div class="box-content">
+                <div id="week-day"week-day="SEX" ></div>
+                <div icon-day="SEX"><img id="icon-day" src="/teste menu/sun-icon.svg" alt="day icon"></div>
+                <div class="max-min">
+                    <div max-day="SEX" ></div>
+                    <div class='min-day' min-day="SEX" ></div>
+                </div>
+        </div>
+        </template>
+        <div id="boxes">
+            
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-    
-    <script type="module" src="renderer.mjs"></script>
     <script type="module" src="script.mjs"></script>
     <script type="module" src="weather.mjs"></script>
     <script type="module" src="chart.mjs" ></script>
-  </body>
+    <script>
+        const template = document.querySelector('#box-template');
+        const boxes = document.querySelector('#boxes');
+
+        const weather_data = [
+        ["Sex", "/teste menu/sun-icon.svg", "22º", "12º"],
+        ["Sáb", "/teste menu/sun-icon.svg", "22º", "12º"],
+        ["Dom", "/teste menu/nuvemNuvemAtrás.svg", "22º", "12º"],
+        ["Seg", "/teste menu/sun-icon.svg", "22º", "12º"],
+        ["Ter", "/teste menu/sun-icon.svg", "22º", "12º"],
+        ["Qua", "/teste menu/sun-icon.svg", "22º", "12º"],
+        ["Qui", "/teste menu/sun-icon.svg", "22º", "12º"],
+        ];
+
+        for(let i = 0; i < 7; i++) {
+        const div = template.content.cloneNode(true);
+        div.querySelector('[week-day]').textContent = weather_data[i][0];
+        div.querySelector('#icon-day').setAttribute('src', weather_data[i][1]);
+        div.querySelector('[max-day]').textContent = weather_data[i][2];
+        div.querySelector('[min-day]').textContent = weather_data[i][3];
+        boxes.appendChild(div);     
+    }
+    
+    // function trocarInfo(eoum = true){
+    //     if (eoum) {
+    //             var dados_temp = infodb1
+    //         }
+    //         else{
+    //             var dados_temp = infodb2
+    //         }
+    //         document.getElementById("maintemp").innerHTML = `${dados_temp}`
+    //     }
+    //     db1.addEventListener("click", () => trocarInfo(true))
+    //     db2.addEventListener("click", () => trocarInfo(false))
+
+    </script>
+</body>
 </html>
