@@ -103,41 +103,5 @@
     <script type="module" src="script.mjs"></script>
     <script type="module" src="weather.mjs"></script>
     <script type="module" src="chart.mjs" ></script>
-    <script>
-        const template = document.querySelector('#box-template');
-        const boxes = document.querySelector('#boxes');
-
-        const weather_data = [
-        ["Sex", "/images/sun-icon.svg", "22º", "12º"],
-        ["Sáb", "/images/sun-icon.svg", "22º", "12º"],
-        ["Dom", "/images/nuvemNuvemAtrás.svg", "22º", "12º"],
-        ["Seg", "/images/sun-icon.svg", "22º", "12º"],
-        ["Ter", "/images/sun-icon.svg", "22º", "12º"],
-        ["Qua", "/images/sun-icon.svg", "22º", "12º"],
-        ["Qui", "/images/sun-icon.svg", "22º", "12º"],
-        ];
-
-        for(let i = 0; i < 7; i++) {
-        const div = template.content.cloneNode(true);
-        div.querySelector('[week-day]').textContent = weather_data[i][0];
-        div.querySelector('#icon-day').setAttribute('src', weather_data[i][1]);
-        div.querySelector('[max-day]').textContent = weather_data[i][2];
-        div.querySelector('[min-day]').textContent = weather_data[i][3];
-        boxes.appendChild(div);     
-    }
-    
-    // function trocarInfo(eoum = true){
-    //     if (eoum) {
-    //             var dados_temp = infodb1
-    //         }
-    //         else{
-    //             var dados_temp = infodb2
-    //         }
-    //         document.getElementById("maintemp").innerHTML = `${dados_temp}`
-    //     }
-    //     db1.addEventListener("click", () => trocarInfo(true))
-    //     db2.addEventListener("click", () => trocarInfo(false))
-
-    </script>
 </body>
 </html>
