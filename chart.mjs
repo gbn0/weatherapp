@@ -34,12 +34,13 @@ var myChart = new Chart(ctx, {
       },
     },
     scales: {
-      borderColor: "#fff",
       x: {
         border: {
           color: "white",
         },
-        ticks: { color: "white" },
+        ticks: {
+          color: "white",
+        },
         grid: {
           color: "white",
           borderColor: "white",
