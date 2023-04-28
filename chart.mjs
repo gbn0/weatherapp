@@ -1,5 +1,8 @@
-export function loadChart(hourly) {
-  hourly.slice(0, 24).forEach((hour) => {
+let indexI = [0, 25, 49, 73, 97, 121, 145];
+let indexF = [24, 48, 72, 96, 120, 144, 168];
+
+export function loadChart(hourly, dia) {
+  hourly.slice(indexI[dia], indexF[dia]).forEach((hour) => {
     let date = new Date(hour.timeStamp);
     let fDate = date.toLocaleTimeString().slice(0, 2);
     let temp = hour.temp;
