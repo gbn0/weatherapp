@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
-    <title>weatherAppt</title>
+    <title>Document</title>
     <link rel="stylesheet" href="reset.css">
     <style>
         @font-face {
         font-family: 'Mont';
-        src: url('/teste menu/Mont-Regular.otf') format('opentype');
+        src: url('/fonts/Mont-Regular.otf') format('opentype');
         }
 
         @font-face {
         font-family: 'Mont';
-        src: url('/teste menu/Mont-Bold.otf') format('opentype');
+        src: url('/fonts/Mont-Bold.otf') format('opentype');
         font-weight: bold;
         }
         body{
@@ -89,7 +89,7 @@
         <template id="box-template">
             <div class="box-content">
                 <div id="week-day"week-day="SEX" ></div>
-                <div icon-day="SEX"><img id="icon-day" src="/teste menu/sun-icon.svg" alt="day icon"></div>
+                <div icon-day="SEX"><img id="icon-day" src="/images/sun-icon.svg" alt="day icon"></div>
                 <div class="max-min">
                     <div max-day="SEX" ></div>
                     <div class='min-day' min-day="SEX" ></div>
@@ -109,13 +109,13 @@
         const boxes = document.querySelector('#boxes');
 
         const weather_data = [
-        ["Sex", "/teste menu/sun-icon.svg", "22º", "12º"],
-        ["Sáb", "/teste menu/sun-icon.svg", "22º", "12º"],
-        ["Dom", "/teste menu/nuvemNuvemAtrás.svg", "22º", "12º"],
-        ["Seg", "/teste menu/sun-icon.svg", "22º", "12º"],
-        ["Ter", "/teste menu/sun-icon.svg", "22º", "12º"],
-        ["Qua", "/teste menu/sun-icon.svg", "22º", "12º"],
-        ["Qui", "/teste menu/sun-icon.svg", "22º", "12º"],
+        ["Sex", "/images/sun-icon.svg", "22º", "12º"],
+        ["Sáb", "/images/sun-icon.svg", "22º", "12º"],
+        ["Dom", "/images/nuvemNuvemAtrás.svg", "22º", "12º"],
+        ["Seg", "/images/sun-icon.svg", "22º", "12º"],
+        ["Ter", "/images/sun-icon.svg", "22º", "12º"],
+        ["Qua", "/images/sun-icon.svg", "22º", "12º"],
+        ["Qui", "/images/sun-icon.svg", "22º", "12º"],
         ];
 
         for(let i = 0; i < 7; i++) {
