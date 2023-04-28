@@ -46,7 +46,7 @@ function parseDailyWeather({ daily }) {
   });
 }
 
-function parseHourlyWeather({ hourly, current_weather }) {
+function parseHourlyWeather({ hourly }) {
   return hourly.time.map((time, index) => {
     return {
       timeStamp: time * 1000,
