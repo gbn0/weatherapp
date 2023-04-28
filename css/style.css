@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Mont';
+    src: url('/fonts/Mont-Regular.otf') format('opentype');
+    }
+
+    @font-face {
+    font-family: 'Mont';
+    src: url('/fonts/Mont-Bold.otf') format('opentype');
+    font-weight: bold;
+    }
+    body{
+        background-color: #2D9EE0;
+        color: white;
+        display:block;
+    }
+    
+    .info{
+        font-size: 100px;
+        font-family: 'Mont';
+    }
+    #boxes{
+        display: flex;
+
+    }
+    .box-content{
+        height: 129px;
+        width: 120px;
+        background-color: rgba(255, 255, 255, 0.13);
+        margin: 5px;
+        border-radius: 20px;
+        padding: 0px;
+        font-size: 20px;
+        font-family: 'Mont';
+        justify-content: center;
+        display: block;
+        cursor: pointer;
+
+    }
+    .box-content:hover{
+        transform: scale(1.08);
+        box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.041);
+        transition: 0.4s;
+    }
+    .box-content div{
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    #week-day{
+        padding-top: 10px;
+        font-size: 25px;
+    }
+    #icon-day{
+        height: 40px;
+        margin: 13px;
+    }
+    .max-min{
+        font-size: 15px;
+    }
+    .min-day {
+        margin-left: 50px;
+        color: rgb(209, 208, 208);
+    }
