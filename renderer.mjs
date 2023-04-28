@@ -2,6 +2,7 @@ let weekDays = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"];
 
 const template = document.querySelector("#box-template");
 const boxes = document.querySelector("#boxes");
+const mainTemp = document.querySelector("#maintemp");
 
 const iconMap = new Map();
 
@@ -11,7 +12,9 @@ function addMapping(values, icon) {
   });
 }
 
-export function renderCurrentWeather({ current }) {}
+export function renderCurrentWeather({ current }) {
+  mainTemp.textContent = current.currentTemp + "°";
+}
 
 export function renderDailyWeather({ daily }) {
   daily.forEach((day) => {
@@ -19,8 +22,8 @@ export function renderDailyWeather({ daily }) {
     const div = template.content.cloneNode(true);
     div.querySelector("[week-day]").textContent = weekDays[date];
 
-    div.querySelector("[max-day]").textContent = day.maxTemp;
-    div.querySelector("[min-day]").textContent = day.minTemp;
+    div.querySelector("[max-day]").textContent = day.maxTemp + "°";
+    div.querySelector("[min-day]").textContent = day.minTemp + "°";
     boxes.appendChild(div);
 
     console.log(weekDays[date]);
