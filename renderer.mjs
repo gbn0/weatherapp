@@ -1,11 +1,6 @@
 let weekDays = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"];
 
 const iconMap = new Map();
-addMapping();
-addMapping();
-addMapping();
-addMapping();
-addMapping();
 
 function addMapping(values, icon) {
   values.forEach((value) => {
