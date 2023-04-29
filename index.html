@@ -9,16 +9,17 @@
     <title>Weather.</title>
 </head>
 <body>
-    <div class="info" id="info">
-        <h1 id="maintemp">23º</h1>
+    <section><div class="info" id="info">
+        <h1 id="maintemp">-°</h1>
     </div>
+</section>
     <section>
         <div style="height: 300px">
             <canvas id="myChart" width="1200px" height="480" style="background-color: transparent;" position="absolute"
                 left:="4560" ; top="965" ;;></canvas>
         </div>
     </section>
-    <section>
+    <section class="box-container">
         
         <template id="box-template">
             <div class="box-content">

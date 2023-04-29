@@ -9,21 +9,24 @@
     font-weight: bold;
     }
     body{
+        height: 100vh;
         background-color: #2D9EE0;
         color: white;
-        display:block;
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
     }
-    
+
     .info{
         font-size: 100px;
         font-family: 'Mont';
     }
     #boxes{
         display: flex;
-
     }
     .box-content{
-        height: 129px;
+        height: 125px;
         width: 120px;
         background-color: rgba(255, 255, 255, 0.13);
         margin: 5px;
@@ -61,4 +64,16 @@
     .min-day {
         margin-left: 50px;
         color: rgb(209, 208, 208);
+    }
+
+    @media(max-width:990px) {
+        body{
+            height: 100vh;
+            background-color: #2D9EE0;
+            color: white;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+        }
     }
