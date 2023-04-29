@@ -66,9 +66,9 @@ header img {
 }
 .box-content:hover {
   transform: scale(1.08);
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.041);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
 }
-.box-content div {
+.box-content div, button{
   display: flex;
   justify-content: center;
 }
@@ -76,6 +76,7 @@ header img {
 #week-day {
   padding-top: 10px;
   font-size: 25px;
+  color:white;
 }
 #icon-day {
   height: 40px;
@@ -83,6 +84,7 @@ header img {
 }
 .max-min {
   font-size: 15px;
+  color:white;
 }
 .min-day {
   margin-left: 50px;

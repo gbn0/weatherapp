@@ -14,7 +14,7 @@
     </header>
     <section id="info-container">
         <div class="MainInfo" id="MainInfo">
-        <img src="/images/sun-icon.svg" alt="">
+        <img id="currIcon" src="" alt="">
         <h1 id="maintemp">-°</h1>
         <h2 id="sectemp"></h2>
     </div>
@@ -28,20 +28,21 @@
     <section class="box-container">
         
         <template id="box-template">
-            <div class="box-content">
+            <button id="btn" onclick="" class="box-content">
                 <div id="week-day" week-day></div>
                 <div><img id="icon-day" icon-day src="/images/sun-icon.svg" alt="day icon"></div>
                 <div class="max-min">
                 <div max-day></div>
                 <div class='min-day' min-day></div>
                 </div>
-        </div>
+        </button>
         </template>
         <div id="boxes">
             
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="clickHandler.mjs"></script>
     <script type="module" src="script.mjs"></script>
     <script type="module" src="weather.mjs"></script>
     <script type="module" src="chart.mjs" ></script>
