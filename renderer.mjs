@@ -1,4 +1,4 @@
-let weekDays = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"];
+let weekDays = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SÁB"];
 
 const template = document.querySelector("#box-template");
 const boxes = document.querySelector("#boxes");
