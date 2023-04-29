@@ -9,13 +9,19 @@
     <title>Weather.</title>
 </head>
 <body>
-    <section><div class="info" id="info">
+    <header>
+        <img id="logo" src="/images/Weather..svg" alt="logo">
+    </header>
+    <section id="info-container">
+        <div class="MainInfo" id="MainInfo">
+        <img src="/images/sun-icon.svg" alt="">
         <h1 id="maintemp">-°</h1>
+        <h2 id="sectemp"></h2>
     </div>
 </section>
-    <section>
-        <div style="height: 300px">
-            <canvas id="myChart" width="1200px" height="480" style="background-color: transparent;" position="absolute"
+    <section id="graphic">
+        <div style="height: 200px">
+            <canvas id="myChart" width="900px" height="200px" style="background-color: transparent;" position="absolute"
                 left:="4560" ; top="965" ;;></canvas>
         </div>
     </section>

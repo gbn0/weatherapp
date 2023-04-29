@@ -7,20 +7,45 @@
     font-family: 'Mont';
     src: url('/fonts/Mont-Bold.otf') format('opentype');
     font-weight: bold;
+}
+body{
+    height: 100vh;
+    background-color: #2D9EE0;
+    color: white;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+    header{
+        width: 67%
     }
-    body{
-        height: 100vh;
-        background-color: #2D9EE0;
-        color: white;
-        display: flex; 
-        flex-direction: column;
+    header img{
+        height: 60%;
+    }
+    #info-container{
+        width: 66%;
+        height: 18%;
+        display: flex;
         align-items: center;
-        justify-content: center; 
     }
-
-    .info{
+    
+    .MainInfo{
+        height: 68%;
         font-size: 100px;
         font-family: 'Mont';
+        display: flex;
+    }
+    .MainInfo img{
+        height: 90%;
+        display: flex;
+        align-self: flex-end;
+        padding-right: 10%;
+    }
+    #graphic{
+        display: flex;
+        align-items: center;
+        height: 38%;
     }
     #boxes{
         display: flex;
