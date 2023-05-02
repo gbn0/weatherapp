@@ -55,6 +55,11 @@ body section{
   justify-content: end;
   margin-left: 15px;
 }
+#wkday-info{
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+}
 .MainInfo img {
   height: 90%;
   display: flex;
