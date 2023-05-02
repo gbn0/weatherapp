@@ -25,17 +25,26 @@ body section{
   height: 40px;
 }
 #info-container {
-  height: 120px;
+  height: 25%;
   display: flex;
   align-items: center;
 }
 
 .MainInfo {
   height: 68%;
-  font-size: 100px;
   font-family: "Mont";
   display: flex;
   
+}
+
+#maintemp{
+  font-size: 100px;
+  bottom: 0;
+}
+#sectemp{
+  color:rgba(255, 255, 255, 0.486);
+  font-size: 60px;
+  line-height: 205%;
 }
 .MainInfo img {
   height: 90%;
@@ -50,9 +59,10 @@ body section{
 }
 #boxes {
   display: flex;
+  margin-top: 3%;
 }
 .box-content {
-  height: 120px;
+  height: 130px;
   width: 120px;
   background-color: rgba(255, 255, 255, 0.13);
   margin: 5px;
@@ -93,11 +103,6 @@ body section{
   color: rgb(209, 208, 208);
 }
 
-#sectemp{
-  color:rgba(255, 255, 255, 0.486);
-  font-size: 60px;
-  align-self: flex-end;
-}
 
 @media (max-width: 990px) {
   body {
