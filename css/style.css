@@ -25,7 +25,7 @@ body section{
   height: 40px;
 }
 #info-container {
-  height: 25%;
+  height: 150px;
   display: flex;
   align-items: center;
 }
@@ -40,17 +40,31 @@ body section{
 #maintemp{
   font-size: 100px;
   bottom: 0;
+  line-height: 130px;
 }
 #sectemp{
   color:rgba(255, 255, 255, 0.486);
   font-size: 60px;
-  line-height: 205%;
+  line-height: 160px;
+}
+#extradata{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  line-height: 22px;
+  justify-content: end;
+  margin-left: 15px;
+}
+#wkday-info{
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
 }
 .MainInfo img {
   height: 90%;
   display: flex;
   align-self: flex-end;
-  padding-right: 10%;
+  padding-right: 30px;
 }
 #graphic {
   display: flex;
@@ -59,7 +73,7 @@ body section{
 }
 #boxes {
   display: flex;
-  margin-top: 3%;
+  margin-top: 1px;
 }
 .box-content {
   height: 130px;
@@ -78,7 +92,7 @@ body section{
 }
 .box-content:hover {
   transform: scale(1.08);
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.205);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.103);
 }
 .box-content div, button{
   display: flex;
