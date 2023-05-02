@@ -52,7 +52,7 @@ var myChart = new Chart(ctx, {
       },
       y: {
         min: 0,
-        max: 30,
+        max: 35,
         border: {
           color: "white",
         },

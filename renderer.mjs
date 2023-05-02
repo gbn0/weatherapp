@@ -10,7 +10,9 @@ const secTemp = document.querySelector("#sectemp");
 const currIcon = document.querySelector("#currIcon");
 
 const iconMap = new Map();
-addMapping([1], "sun-icon.svg");
+addMapping([0], "clear.svg");
+addMapping([1,2], "part-clear.svg");
+addMapping([3], "cloudy.svg")
 
 function addMapping(values, icon) {
   values.forEach((value) => {
