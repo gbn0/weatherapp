@@ -9,6 +9,7 @@
   font-weight: bold;
 }
 body {
+  width: 100vw;
   height: 100vh;
   background-color: #2d9ee0;
   color: white;
@@ -17,11 +18,11 @@ body {
   align-items: center;
   justify-content: center;
 }
-header {
-  width: 67%;
+body section{
+  width: 908px;
 }
-header img {
-  height: 60%;
+.header img {
+  height: 40px;
 }
 #info-container {
   width: 66%;
@@ -89,6 +90,10 @@ header img {
 .min-day {
   margin-left: 50px;
   color: rgb(209, 208, 208);
+}
+
+#sectemp{
+  color:rgba(255, 255, 255, 0.486)
 }
 
 @media (max-width: 990px) {
