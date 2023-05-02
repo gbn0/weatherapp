@@ -12,7 +12,14 @@ const currIcon = document.querySelector("#currIcon");
 const iconMap = new Map();
 addMapping([0], "clear.svg");
 addMapping([1,2], "part-clear.svg");
-addMapping([3], "cloudy.svg")
+addMapping([3], "cloudy.svg");
+addMapping([45], "fogs.svg");
+addMapping([48], "fogl.svg");
+addMapping([51,53,56,61,63,66,80,81], "rains.svg");
+addMapping([55,57,65,67,82], "rainl.svg");
+addMapping([95], "thunderstorm.svg");
+addMapping([96,99], "hail.svg");
+
 
 function addMapping(values, icon) {
   values.forEach((value) => {
@@ -21,8 +28,9 @@ function addMapping(values, icon) {
 }
 
 export function renderCurrentWeather({ current }) {
+  const icon = iconMap.get(current.iconCode);
   mainTemp.textContent = current.currentTemp + "°";
-  // currIcon.src = `images/${iconMap.get(current.iconCode)}`;
+  currIcon.src = `images/${icon}`;
 
 }
 
@@ -33,7 +41,7 @@ export function renderDailyWeather({ daily }) {
     const icon = iconMap.get(day.iconCode);
     div.getElementById("btn").onclick = function() { clickHandler(index, day)};
     div.querySelector("[week-day]").textContent = weekDays[date];
-    // div.querySelector("[icon-day").src = `images/${icon}`;
+    div.querySelector("[icon-day").src = `images/${icon}`;
     div.querySelector("[max-day]").textContent = day.maxTemp + "°";
     div.querySelector("[min-day]").textContent = day.minTemp + "°";
     boxes.appendChild(div);
@@ -51,6 +59,7 @@ function clickHandler(index, day) {
   }else {
     mainTemp.textContent = day.maxTemp + "°";
     secTemp.textContent = day.minTemp + "°";
+    currIcon.src = `images/${iconMap.get(day.iconCode)}`;
     loadChart(data.hourly,index);
   }
   
