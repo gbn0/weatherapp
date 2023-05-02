@@ -22,16 +22,21 @@ var myChart = new Chart(ctx, {
     labels: [],
     datasets: [
       {
-        label: "",
+        label: "Temperatura",
         data: [],
         backgroundColor: ["rgba(255, 255, 255, 1)"],
         borderColor: ["rgba(255,255,255,1)"],
         borderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: '#2d9ee0',
       },
     ],
   },
   options: {
     plugins: {
+      tooltip: {
+        displayColors: false,
+      },
       legend: {
         display: false,
       },
