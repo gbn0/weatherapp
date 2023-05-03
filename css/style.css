@@ -20,6 +20,10 @@ body {
 body section{
   width: 908px;
 }
+.header {
+  display:flex;
+  justify-content: space-between;
+}
 .header img {
   height: 40px;
 }
