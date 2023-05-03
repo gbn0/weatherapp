@@ -32,7 +32,7 @@ export function renderCurrentWeather(data) {
   mainTemp.textContent = data.current.currentTemp + "°";
   rain.textContent = "Chuva: " + data.current.precip + "%";
   wind.textContent = "Vento: " + data.current.windSpeed + "km/h";
-  wkday.textContent = currDate[day];
+  wkday.textContent = currDate[day] + " (Hoje)";
   how.textContent = weather;
   yearnmonth.textContent = fullDate;
   currIcon.src = `images/${icon}`;
