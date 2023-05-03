@@ -55,10 +55,10 @@ export function renderCurrentWeather(data) {
   let date = new Date(data.daily[0].timeStamp)
   let fullDate = date.getDate() + " de " + months[date.getMonth()] + " de " + date.getFullYear();
   let day  = date.getDay();
-
-  console.log(fullDate);
   const weather = weatherMap.get(data.current.iconCode);
   const icon = iconMap.get(data.current.iconCode);
+
+
   mainTemp.textContent = data.current.currentTemp + "°";
   rain.textContent = "Chuva: " + data.current.precip + "%";
   wind.textContent = "Vento: " + data.current.windSpeed + "km/h";
@@ -74,6 +74,8 @@ export function renderDailyWeather({ daily }) {
     let date = new Date(day.timeStamp).getDay();
     const div = template.content.cloneNode(true);
     const icon = iconMap.get(day.iconCode);
+
+    
     div.getElementById("btn").onclick = function() { clickHandler(index, day)};
     div.querySelector("[week-day]").textContent = weekDays[date];
     div.querySelector("[icon-day").src = `images/${icon}`;
@@ -87,6 +89,8 @@ export function renderDailyWeather({ daily }) {
 function clickHandler(index, day) {
   
   let data = getData();
+
+
   if(index == 0) {
     renderCurrentWeather(data);
     secTemp.textContent = "";
@@ -96,6 +100,8 @@ function clickHandler(index, day) {
     let date = new Date(day.timeStamp)
     let fullDay = date.getDay();
     let fullDate = date.getDate() + " de " + months[date.getMonth()] + " de " + date.getFullYear();
+
+    
     mainTemp.textContent = day.maxTemp + "°";
     secTemp.textContent = day.minTemp + "°";
     currIcon.src = `images/${iconMap.get(day.iconCode)}`;
