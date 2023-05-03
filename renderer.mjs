@@ -76,7 +76,7 @@ export function renderDailyWeather({ daily }) {
     const icon = iconMap.get(day.iconCode);
 
     
-    div.getElementById("btn").onclick = function() { clickHandler(index, day)};
+    div.getElementById("btn").onclick = function() { clickHandler(index, day, this)};
     div.querySelector("[week-day]").textContent = weekDays[date];
     div.querySelector("[icon-day").src = `images/${icon}`;
     div.querySelector("[max-day]").textContent = day.maxTemp + "°";
@@ -86,9 +86,22 @@ export function renderDailyWeather({ daily }) {
 }
 
 
-function clickHandler(index, day) {
-  
+function clickHandler(index, day, el) {
+
   let data = getData();
+
+  if(!el.classList.contains("selected")) {
+    shutPrevious();
+    el.classList.add("selected");
+  }
+
+  function shutPrevious() {
+    const previous = document.querySelector(".selected");
+
+    if(previous) {
+      previous.classList.remove("selected");
+    }
+  }
 
 
   if(index == 0) {

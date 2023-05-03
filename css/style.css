@@ -105,6 +105,10 @@ body section{
   justify-content: center;
 }
 
+.selected {
+  filter:brightness(70%);
+}
+
 #week-day {
   padding-top: 5px;
   font-size: 25px;
