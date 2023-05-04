@@ -2,7 +2,7 @@ import { loadChart } from "./chart.mjs";
 import { getData } from "./script.mjs";
 import { weatherMap } from "./maps.mjs";
 import { iconMap } from "./maps.mjs";
-// import { backgroundMap } from "./maps.mjs";
+import { backgroundMap } from "./maps.mjs";
 
 let weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
 let currDate = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"];
@@ -28,6 +28,7 @@ export function renderCurrentWeather(data) {
   const weather = weatherMap.get(data.current.iconCode);
   const icon = iconMap.get(data.current.iconCode);
 
+  document.body.style.background = backgroundMap.get(data.current.iconCode);
 
   mainTemp.textContent = data.current.currentTemp + "°";
   rain.textContent = "Chuva: " + data.current.precip + "%";
@@ -45,7 +46,10 @@ export function renderDailyWeather({ daily }) {
     const div = template.content.cloneNode(true);
     const icon = iconMap.get(day.iconCode);
 
-    
+    if(index == 0){
+      div.getElementById("btn").classList.add("selected");
+    }
+
     div.getElementById("btn").onclick = function() { clickHandler(index, day, this)};
     div.querySelector("[week-day]").textContent = weekDays[date];
     div.querySelector("[icon-day").src = `images/${icon}`;
@@ -73,6 +77,8 @@ function clickHandler(index, day, el) {
     }
   }
 
+  
+  document.body.style.background = backgroundMap.get(day.iconCode);
 
   if(index == 0) {
     renderCurrentWeather(data);

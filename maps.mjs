@@ -23,6 +23,10 @@ addWeatherMapping([95], "Tempestade");
 addWeatherMapping([96,99], "Granizo");
 
 
+addBackgroundMapping([0,1,2], 'linear-gradient(to bottom,rgb(9,30,58)-40%,rgb(47,128,237)20%,rgb(45,158,224)100%)');
+addBackgroundMapping([3,45,48], 'linear-gradient(to bottom,rgb(0,0,0) -40%,rgb(75,82,107)10%,rgb(45,158,224)100%)');
+addBackgroundMapping([51,53,56,61,63,66,80,81,55,57,65,67,82,95,96,99], 'linear-gradient(to bottom, rgb(0,0,0) -30%,rgb(50,122,203) 100%,rgb(101,111,143) 101%)');
+
 function addBackgroundMapping(values, gradient) {
   values.forEach((value) => {
     Map3.set(value, gradient);
