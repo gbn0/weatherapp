@@ -8,7 +8,5 @@ fetch(url, {
   .then(response => response.json())
   .then(data => {
     console.log(data)
-    const lati = data[0].latitude
-    const long = data[0].longitude
   }
 );
