@@ -10,10 +10,6 @@ body{
 }
 
 .search-box {
-    position: absolute;
-    top: 5%;
-    left: 85%;
-    transform: translate(-100%,0%);
     background:transparent;
     border: 1px solid #f0f5f6;
     height: 30px;
@@ -38,6 +34,11 @@ body{
 
 }
 
+.autocom-box {
+    position: relative;
+    
+}
+
 ::-webkit-input-placeholder{
     color: #f0f5f6;
 }
@@ -56,6 +57,11 @@ body{
 .search-box:hover > .search-txt{
     width:240px;
     padding: 0 6px;
+    
+}
+
+.search-box:hover > .autocom-box{
+    display:block;
 }
 
 .search-btn:hover > .search-btn{
