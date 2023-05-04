@@ -46,7 +46,10 @@ export function renderDailyWeather({ daily }) {
     const div = template.content.cloneNode(true);
     const icon = iconMap.get(day.iconCode);
 
-    
+    if(index == 0){
+      div.getElementById("btn").classList.add("selected");
+    }
+
     div.getElementById("btn").onclick = function() { clickHandler(index, day, this)};
     div.querySelector("[week-day]").textContent = weekDays[date];
     div.querySelector("[icon-day").src = `images/${icon}`;
