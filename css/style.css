@@ -27,10 +27,7 @@ body section{
 .header img {
   height: 40px;
 }
-#autocom-box option{
-  width: 1000px;
-  color: purple;
-}
+
 #info-container {
   height: 150px;
   display: flex;
