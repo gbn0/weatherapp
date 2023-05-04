@@ -1,10 +1,12 @@
 
-const search_term = 'São Pau';
-fetch(`https://api.teleport.org/api/cities/?search=${search_term}`)
+export function GetCity(c, ind){
+  const search_term = c;
+  const sug = '';
+  fetch(`https://api.teleport.org/api/cities/?search=${search_term}`)
   .then(response => response.json())
   .then(data => {
-    for (let i = 0; i < 8; i++) {
-      console.log(data['_embedded']['city:search-results'][i]['matching_alternate_names'][0]['name'])
+      sug = (data['_embedded']['city:search-results'][ind]['matching_alternate_names'][0]['name'])
     }
-  }
 );
+    return sug
+}

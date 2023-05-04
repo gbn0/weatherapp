@@ -1,6 +1,6 @@
 import { GetCity } from "./cities.mjs";
 
-const searchWrapper = document.querySelector(".search-input");
+const searchWrapper = document.querySelector(".search-box");
 const inputBox = searchWrapper.querySelector("#searchcity");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 // if user press any key and release
@@ -8,13 +8,19 @@ inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
     let emptyArray = [];
     if(userData){
+        let allList = suggBox.querySelectorAll("li");
+        for (let i = 0; i < allList.length; i++) {
+            //adding onclick attribute in all li tag
+            allList[i].setAttribute("onclick", "select(this)");
+        }
         for (let i = 0; i < 4; i++) {
-            GetCity(userData)
+            GetCity(userData, i)
         }
     }else{
         searchWrapper.classList.remove("active"); //hide autocomplete box
     }
 }
+
 function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
