@@ -1,5 +1,13 @@
-
-@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap%27%29%3B);
+@font-face {
+    font-family: "Mont";
+    src: url("/fonts/Mont-Regular.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "Mont";
+    src: url("/fonts/Mont-Bold.otf") format("opentype");
+    font-weight: bold;
+  }
 
 body{
     
@@ -12,7 +20,7 @@ body{
 .search-box {
     position: absolute;
     top: 5%;
-    left: 85%;
+    left: 84%;
     transform: translate(-100%,0%);
     background:transparent;
     border: 1px solid #f0f5f6;
@@ -33,7 +41,8 @@ body{
     line-height: 40px;
     width: 0;
     transition: .5s;
-    font-family:'Open Sans';
+    font-family:'Mont';
+    font-weight: bold;
 
 }
 
@@ -42,10 +51,10 @@ body{
 }
 
 .search-btn{
-    width: 40px;
+    width: 30px;
     height: 40px;
-    border-radius: 50%;
-    background:#2F80ED;
+    border-radius: 70%;
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;

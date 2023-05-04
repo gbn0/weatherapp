@@ -20,10 +20,10 @@ body {
 body section{
   width: 908px;
 }
-.header {
+/* .header {
   display:flex;
   justify-content: space-between;
-}
+} */
 .header img {
   height: 40px;
 }
@@ -54,7 +54,7 @@ body section{
 #extradata{
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
   line-height: 22px;
   justify-content: end;
   margin-left: 15px;
