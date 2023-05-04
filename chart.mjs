@@ -14,6 +14,9 @@ export function loadChart(hourly, dia) {
   myChart.update();
 }
 
+
+
+
 var ctx = document.getElementById("myChart");
 
 var myChart = new Chart(ctx, {
@@ -56,8 +59,8 @@ var myChart = new Chart(ctx, {
         },
       },
       y: {
-        min: 0,
-        max: 35,
+        suggestedMin: 0,
+        suggestedMax: 25,
         border: {
           color: "white",
         },
@@ -65,7 +68,6 @@ var myChart = new Chart(ctx, {
         grid: {
           display: false,
         },
-        beginAtZero: true,
       },
     },
   },
