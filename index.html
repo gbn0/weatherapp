@@ -14,7 +14,7 @@
     <div class="header">
         <img id="logo" src="/images/Weather..svg" alt="logo">
         <div class="search-box">
-            <input type="text" class="search-txt" placeholder=" Pesquisar">
+            <input type="text" class="search-txt" placeholder="Buscar cidade...">
             <!-- <div class="autocom-box">
             <li>São Paulo</li>
             <li>São Pedro</li>
@@ -33,14 +33,14 @@
         <div id="maintemp"></div>
         <div id="sectemp"></div>
         <div id="extradata">
-            <span id="rain">Chuva: 20%</span>
-            <span id="wind">Vento: 12 km/h</span>
+            <span id="rain"></span>
+            <span id="wind"></span>
         </div>
         <div id="wkday-info">
             <div id="extradata">
-                <span><b id="wkday">Sexta</b></span>
-                <span id="yearnmonth">05 de maio de 2023</span>
-                <span id="how">Dia ensolarado</span>    
+                <span><b id="wkday"></b></span>
+                <span id="yearnmonth"></span>
+                <span id="how"></span>    
             </div>
         </div>
     </div>
@@ -69,6 +69,7 @@
     </section>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="cities.mjs"></script>
     <script type="module" src="maps.mjs"></script>
     <script type="module" src="script.mjs"></script>
     <script type="module" src="weather.mjs"></script>
