@@ -1,12 +1,10 @@
-const name = 'Tokyo';
-const url = 'https://api.api-ninjas.com/v1/city?name=' + name;
-const apiKey = 'h6cYnK2JVkfo6CgWp9082Q==qGJ7yWD5VvrBlY91';
 
-fetch(url, {
-  headers: { 'X-Api-Key': apiKey }
-})
+const search_term = 'São Pau';
+fetch(`https://api.teleport.org/api/cities/?search=${search_term}`)
   .then(response => response.json())
   .then(data => {
-    console.log(data)
+    for (let i = 0; i < 8; i++) {
+      console.log(data['_embedded']['city:search-results'][i]['matching_alternate_names'][0]['name'])
+    }
   }
 );
