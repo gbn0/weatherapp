@@ -71,7 +71,7 @@ function GetCity() {
 
 
 
-searchWrapper.addEventListener('mouseout', () => {
+searchWrapper.addEventListener('mouseleave', () => {
     suggBoxUl.innerHTML = "";
     suggBox.style.display = 'none';
     inputBox.readOnly = true
