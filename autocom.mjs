@@ -10,11 +10,7 @@ inputBox.value = '';
 function GetCity() {
     const search_term = inputBox.value;
     if(search_term){
-        suggBox.style.display = 'block'
-    }
-    else{
-        suggBox.style.display = 'none'
-    }
+        suggBox.style.display = 'block'    
     fetch(`https://api.teleport.org/api/cities/?search=${search_term}`)
       .then(response => response.json())
       .then(data => {
@@ -27,12 +23,26 @@ function GetCity() {
         }
         for (let i = 0; i < numResults && i < 4; i++) { // define o limite superior do loop para o número real de resultados
             const city = results[i]['matching_full_name'];
-          html += `<li>${city}</li>`;
+            html += `<li>${city}</li>`;
         }
         suggBoxUl.innerHTML = html;
       });
+      let allList = suggBoxUl.querySelectorAll("li");
+      for (let i = 0; i < allList.length; i++) {
+        allList[i].setAttribute("onclick", "select(this)");
+    }
+}
+    else{
+        suggBox.style.display = 'none'
+    }
   }
   
+
+  function select(element){
+    let selectData = element.textContent;
+    inputBox.value = selectData;
+    suggBox.style.display = 'none'
+}
   
 inputBox.addEventListener("input", GetCity);
 
