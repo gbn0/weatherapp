@@ -11,7 +11,7 @@ inputBox.value = '';
 
 let suggested =  {};
 
-suggBoxUl.addEventListener("click", getValue);
+suggBoxUl.addEventListener("click", changeCity);
 
 function GetCity() {
     const search_term = inputBox.value;
@@ -44,7 +44,7 @@ function GetCity() {
     return suggested;
   }
 
-  function getValue(event) {
+  function changeCity(event) {
     console.log(event.target.innerText);
     inputBox.value = event.target.innerText;
     suggBoxUl.innerHTML = "";
