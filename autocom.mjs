@@ -12,24 +12,25 @@ inputBox.value = 'Porto Alegre, Rio Grande do Sul, Brazil';
 let suggested =  {};
 
 suggBoxUl.addEventListener("click", changeCity);
+inputBox.addEventListener("input", GetCity);
 
 function GetCity() {
     const search_term = inputBox.value;
     if(search_term){
-        suggBox.style.display = 'block'    
-    fetch(`https://api.teleport.org/api/cities/?search=${search_term}`)
+      suggBox.style.display = 'block'    
+      fetch(`https://api.teleport.org/api/cities/?search=${search_term}`)
       .then(response => response.json())
       .then(data => {
         let html = ""; 
-        const results = data['_embedded']['city:search-results'];
+
         suggested = data._embedded['city:search-results']
-        const numResults = results.length;
+        const numResults = suggested.length;
         if (numResults === 0) {
           suggBoxUl.innerHTML = "Nenhum resultado encontrado."; // exibe uma mensagem de erro se a lista de resultados estiver vazia
           return;
         }
-        for (let i = 0; i < numResults && i < 4; i++) { // define o limite superior do loop para o número real de resultados
-            const city = results[i]['matching_full_name'];
+        for (let i = 0; i < numResults && i < 5; i++) { // define o limite superior do loop para o número real de resultados
+            const city = suggested[i]['matching_full_name'];
             html += `<li>${city}</li>`;
         }
         suggBoxUl.innerHTML = html;
@@ -44,18 +45,13 @@ function GetCity() {
     }
   }
 
-  function getSuggested() {
-    return suggested;
-  }
-
   function changeCity(event) {
     inputBox.value = event.target.innerText;
-    suggBoxUl.innerHTML = "";
+    inputBox.innerHTML = ""
+    
     suggBox.style.display = 'none';
-    let options = getSuggested();
-    for(let i = 0; i < options.length; i++) {
-      let currOption = options[i];
-
+    for(let i = 0; i < suggested.length; i++) {
+      let currOption = suggested[i] 
       if(currOption.matching_full_name == event.target.innerText) {
         const geoCode = currOption._links['city:item'].href.slice(46, 54);
         getLatLon(geoCode);
@@ -72,17 +68,15 @@ function GetCity() {
       startWeather(data.location.latlon);
     })
   }
-  
 
-  function select(element){
-    let selectData = element.textContent;
-    inputBox.value = selectData;
-    suggBox.style.display = 'none'
-}
-  
-inputBox.addEventListener("input", GetCity);
 
-searchWrapper.addEventListener('mouseleave', () => {
+
+searchWrapper.addEventListener('mouseout', () => {
     suggBoxUl.innerHTML = "";
     suggBox.style.display = 'none';
+    inputBox.readOnly = true
+  });
+
+  inputBox.addEventListener('mouseenter', () => {
+    inputBox.readOnly = false
   });

@@ -17,7 +17,6 @@ getWeather(-51.23, -30.03306).then((data) => {
 export function startWeather(latlon) {
 
   getWeather(latlon.longitude, latlon.latitude).then((data) => {
-    console.log(data);
     loadChart(data.hourly, 0);
     renderCurrentWeather(data);
     renderDailyWeather(data);
@@ -25,8 +24,6 @@ export function startWeather(latlon) {
   });
 
 }
-
-
 
 export function getData() {
   return data1;
