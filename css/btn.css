@@ -81,6 +81,10 @@
     padding: 0 6px;
 }
 
+.search-box:hover > .autocom-box{
+    display:block;
+}
+
 .search-btn:hover > .search-btn{
     background: #f0f5f6 ;
 

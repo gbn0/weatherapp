@@ -3,8 +3,6 @@ import { startWeather } from "./script.mjs";
 const searchWrapper = document.querySelector(".search-box");
 const inputBox = searchWrapper.querySelector(".search-txt");
 const suggBox = searchWrapper.querySelector(".autocom-box");
-const icon = searchWrapper.querySelector(".search-btn");
-// let linkTag = searchWrapper.querySelector("a");
 const suggBoxUl = suggBox.querySelector("ul");
 
 inputBox.value = 'Porto Alegre, Rio Grande do Sul, Brazil';
@@ -29,16 +27,12 @@ function GetCity() {
           suggBoxUl.innerHTML = "Nenhum resultado encontrado."; // exibe uma mensagem de erro se a lista de resultados estiver vazia
           return;
         }
-        for (let i = 0; i < numResults && i < 5; i++) { // define o limite superior do loop para o número real de resultados
+        for (let i = 0; i < numResults && i < 4; i++) { // define o limite superior do loop para o número real de resultados
             const city = suggested[i]['matching_full_name'];
             html += `<li>${city}</li>`;
         }
         suggBoxUl.innerHTML = html;
       });
-      let allList = suggBoxUl.querySelectorAll("li");
-      for (let i = 0; i < allList.length; i++) {
-        allList[i].setAttribute("onclick", "select(this)");
-    }
 }
     else{
         suggBox.style.display = 'none'
@@ -47,8 +41,7 @@ function GetCity() {
 
   function changeCity(event) {
     inputBox.value = event.target.innerText;
-    inputBox.innerHTML = ""
-    
+    suggBoxUl.innerHTML = ""
     suggBox.style.display = 'none';
     for(let i = 0; i < suggested.length; i++) {
       let currOption = suggested[i] 
@@ -71,12 +64,14 @@ function GetCity() {
 
 
 
-searchWrapper.addEventListener('mouseout', () => {
+searchWrapper.addEventListener('mouseleave', () => {
     suggBoxUl.innerHTML = "";
     suggBox.style.display = 'none';
-    inputBox.readOnly = true
+    inputBox.readonly = true;
   });
 
-  inputBox.addEventListener('mouseenter', () => {
-    inputBox.readOnly = false
-  });
+
+inputBox.addEventListener('mouseover', () => {
+    inputBox.readonly = false;
+})
+
