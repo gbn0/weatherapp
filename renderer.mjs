@@ -42,6 +42,7 @@ export function renderCurrentWeather(data) {
 }
 
 export function renderDailyWeather({ daily }) {
+  boxes.innerHTML = "";
   daily.forEach((day, index) => {
     let date = new Date(day.timeStamp).getDay();
     const div = template.content.cloneNode(true);
