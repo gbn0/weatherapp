@@ -11,6 +11,7 @@
 
 
 .search-box {
+  position:relative;
     background:transparent;
     border: 1px solid #f0f5f6;
     height: 30px;
@@ -21,12 +22,12 @@
     align-items: center;
 }
 .autocom-box{
-    background-color: white;
-    color: #999;
+    background-color: rgb(97, 97, 97);
+    color: #fff;
     font-family: 'Mont';
     position: absolute;
-    top:98px;
-    right: 250px;
+    top: 100%;
+    right: 7%;
     width:259px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -35,6 +36,7 @@
 .autocom-box ul{
     border-top: 1px solid #999;
     padding: 15px 10px;
+    
   }
   
   .autocom-box ul li{

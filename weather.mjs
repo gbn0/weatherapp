@@ -1,7 +1,5 @@
-const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=-30.06&longitude=-51.17&hourly=temperature_2m,precipitation_probability&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=America%2FSao_Paulo`;
-
-export function getWeather() {
-  return fetch(apiUrl)
+export function getWeather(lon, lat) {
+  return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,precipitation_probability&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max,windspeed_10m_max&current_weather=true&timeformat=unixtime&timezone=America%2FSao_Paulo`)
     .then((res) => res.json())
     .then((data) => {
       return {
