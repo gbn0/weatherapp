@@ -7,7 +7,7 @@ const icon = searchWrapper.querySelector(".search-btn");
 // let linkTag = searchWrapper.querySelector("a");
 const suggBoxUl = suggBox.querySelector("ul");
 
-inputBox.value = '';
+inputBox.value = 'Porto Alegre, Rio Grande do Sul, Brazil';
 
 let suggested =  {};
 
@@ -45,7 +45,6 @@ function GetCity() {
   }
 
   function changeCity(event) {
-    console.log(event.target.innerText);
     inputBox.value = event.target.innerText;
     suggBoxUl.innerHTML = "";
     suggBox.style.display = 'none';
@@ -74,6 +73,6 @@ function GetCity() {
 inputBox.addEventListener("input", GetCity);
 
 searchWrapper.addEventListener('mouseleave', () => {
-    inputBox.value = '';
-    GetCity()
+    suggBoxUl.innerHTML = "";
+    suggBox.style.display = 'none';
   });
