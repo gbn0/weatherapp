@@ -116,6 +116,11 @@ body section{
     padding: 0 6px;
     
 }
+.search-txt{
+  width:240px;
+  padding: 0 6px;
+  
+}
 
 .search-btn:hover > .search-btn{
     background: #f0f5f6 ;
