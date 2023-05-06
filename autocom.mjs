@@ -4,12 +4,14 @@ const searchWrapper = document.querySelector(".search-box");
 const inputBox = searchWrapper.querySelector(".search-txt");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const suggBoxUl = suggBox.querySelector("ul");
+const blur = document.querySelector(".blur");
 
 inputBox.value = 'Porto Alegre, Rio Grande do Sul, Brazil';
 
 let suggested =  {};
 
 suggBoxUl.addEventListener("click", changeCity);
+suggBoxUl.addEventListener("click", HideBlur);
 inputBox.addEventListener("input", GetCity);
 
 function GetCity() {
@@ -43,6 +45,7 @@ function GetCity() {
     inputBox.value = event.target.innerText;
     suggBoxUl.innerHTML = ""
     suggBox.style.display = 'none';
+    inputBox.readonly = true;
     for(let i = 0; i < suggested.length; i++) {
       let currOption = suggested[i] 
       if(currOption.matching_full_name == event.target.innerText) {
@@ -74,4 +77,21 @@ searchWrapper.addEventListener('mouseleave', () => {
 inputBox.addEventListener('mouseover', () => {
     inputBox.readonly = false;
 })
+const logo = document.querySelector("#logo");
+
+searchWrapper.addEventListener("click", () => {
+    searchWrapper.style.transition = '0.5s'
+    searchWrapper.style.transform = 'translateY(300px) translateX(-429px)';
+    blur.style.display = 'block'
+    logo.style.transform = 'translateY(200px) translateX(334px)';
+    logo.style.scale = '1.2x'
+  });
+
+function HideBlur(){
+  searchWrapper.style.transform = 'translateY(0px) translateX(0px)';
+  logo.style.transform = 'translateY(0px) translateX(0px)';
+  blur.style.display = 'none'
+}
+blur.addEventListener("click", HideBlur);
+
 
