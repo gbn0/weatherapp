@@ -28,6 +28,81 @@ body section{
   height: 40px;
 }
 
+.search-box {
+  position:relative;
+    background:transparent;
+    border: 1px solid #f0f5f6;
+    height: 30px;
+    padding: 10px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.autocom-box{
+    background-color: rgb(97, 97, 97);
+    color: #fff;
+    font-family: 'Mont';
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    width:259px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: none;
+}
+.autocom-box ul{
+    border-top: 1px solid #999;
+    padding: 15px 10px;
+    
+  }
+  
+  .autocom-box ul li{
+    list-style:none;
+    border-radius: 3px;
+    padding: 15px 10px;
+    cursor: pointer;
+  }
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    padding: 0;
+    color: #f0f5f6;
+    font-size:16px;
+    line-height: 40px;
+    width: 0;
+    transition: .5s;
+    font-family:'Mont';
+    font-weight: bold;
+
+}
+
+::-webkit-input-placeholder{
+    color: #f0f5f6;
+}
+
+.search-btn{
+    width: 30px;
+    height: 40px;
+    border-radius: 70%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.search-box:hover > .search-txt{
+    width:240px;
+    padding: 0 6px;
+}
+
+.search-btn:hover > .search-btn{
+    background: #f0f5f6 ;
+
+}
 #info-container {
   height: 150px;
   display: flex;
