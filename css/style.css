@@ -163,6 +163,13 @@ body section{
   justify-content: end;
   margin-left: 15px;
 }
+#extradata-day{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  line-height: 23px;
+}
 #wkday-info{
   width: 435px;
   display: flex;
