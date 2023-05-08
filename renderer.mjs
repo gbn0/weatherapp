@@ -4,8 +4,8 @@ import { weatherMap } from "./maps.mjs";
 import { iconMap } from "./maps.mjs";
 import { backgroundMap } from "./maps.mjs";
 
-let weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
-let currDate = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"];
+let weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+let currDate = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
 let months = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
 
 const template = document.querySelector("#box-template");
