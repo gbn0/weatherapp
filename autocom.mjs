@@ -66,7 +66,15 @@ function GetCity() {
     })
   }
 
+searchWrapper.addEventListener('mouseleave', () => {
+  suggBoxUl.innerHTML = "";
+  suggBox.style.display = "none";
+  inputBox.readonly = true;
+});
 
+inputBox.addEventListener('mouseover', () => {
+  inputBox.readonly = false;
+});
 
 
 const logo = document.querySelector("#logo");
@@ -88,3 +96,4 @@ function HideBlur(){
   blur.style.display = 'none'
 }
 blur.addEventListener("click", HideBlur);
+suggBoxUl.addEventListener("click", HideBlur);
