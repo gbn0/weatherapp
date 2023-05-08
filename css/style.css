@@ -116,10 +116,15 @@ body section{
     padding: 0 6px;
     
 }
-.search-txt{
+.search-box:hover > .search-txt{
   width:240px;
   padding: 0 6px;
   
+}
+
+.inblur {
+  width: 240px;
+  padding: 0 6px;
 }
 
 .search-btn:hover > .search-btn{

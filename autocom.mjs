@@ -42,7 +42,7 @@ function GetCity() {
   }
 
   function changeCity(event) {
-    console.log(blur.style.display);
+    HideBlur();
     inputBox.value = event.target.innerText;
     suggBoxUl.innerHTML = ""
     suggBox.style.display = 'none';
@@ -79,21 +79,22 @@ inputBox.addEventListener('mouseover', () => {
 
 const logo = document.querySelector("#logo");
 
-searchWrapper.addEventListener("click", () => {
+inputBox.addEventListener("click", () => {
+  inputBox.classList.add("inblur");
   searchWrapper.style.transition = '0.5s'
   searchWrapper.style.transform = 'translateY(300px) translateX(-300px)';
   blur.style.transition = '0.5s'
   blur.style.display = 'block'
   logo.style.height = "80px"
   logo.style.transform = 'translateY(180px) translateX(203px)';
-  ;
 });
 
 function HideBlur(){
+  inputBox.classList.remove("inblur");
   searchWrapper.style.transform = 'translateY(0px) translateX(0px)';
   logo.style.transform = 'translateY(0px) translateX(0px)'; 
   logo.style.height = "40px"
   blur.style.display = 'none'
 }
+
 blur.addEventListener("click", HideBlur);
-suggBoxUl.addEventListener("click", HideBlur);
