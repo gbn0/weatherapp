@@ -42,6 +42,7 @@ function GetCity() {
   }
 
   function changeCity(event) {
+    console.log(blur.style.display);
     inputBox.value = event.target.innerText;
     suggBoxUl.innerHTML = ""
     suggBox.style.display = 'none';
@@ -67,16 +68,7 @@ function GetCity() {
 
 
 
-searchWrapper.addEventListener('mouseleave', () => {
-    suggBoxUl.innerHTML = "";
-    suggBox.style.display = 'none';
-    inputBox.readonly = true;
-  });
 
-
-inputBox.addEventListener('mouseover', () => {
-    inputBox.readonly = false;
-})
 const logo = document.querySelector("#logo");
 
 searchWrapper.addEventListener("click", () => {
@@ -96,5 +88,3 @@ function HideBlur(){
   blur.style.display = 'none'
 }
 blur.addEventListener("click", HideBlur);
-suggBoxUl.addEventListener("click", HideBlur);
-
