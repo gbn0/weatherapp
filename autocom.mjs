@@ -11,6 +11,7 @@ inputBox.value = 'Porto Alegre, Rio Grande do Sul, Brazil';
 let suggested =  {};
 
 suggBoxUl.addEventListener("click", changeCity);
+suggBoxUl.addEventListener("click", HideBlur);
 
 inputBox.addEventListener("input", GetCity);
 
