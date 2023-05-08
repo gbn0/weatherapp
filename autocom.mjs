@@ -30,7 +30,7 @@ function GetCity() {
           suggBoxUl.innerHTML = "Nenhum resultado encontrado."; // exibe uma mensagem de erro se a lista de resultados estiver vazia
           return;
         }
-        for (let i = 0; i < numResults && i < 4; i++) { // define o limite superior do loop para o número real de resultados
+        for (let i = 0; i < numResults && i < 3; i++) { // define o limite superior do loop para o número real de resultados
             const city = suggested[i]['matching_full_name'];
             html += `<li>${city}</li>`;
         }
